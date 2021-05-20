@@ -1,0 +1,38 @@
+[
+    {
+      "id": 0,
+      "name": "Copacabana Beach",
+      "address": "Copacabana",
+      "description": "Rio de Janeiro's famous beach",
+      "price": 0,
+      "website": "https://www.rio.com/practical-rio/copacabana",
+      "phone": "55-21-1111-4444",
+      "mainImage" : "copacabana1",
+      "image1": "copacabana1",
+      "image2": "copacabana2"
+    },
+    {
+      "id": 1,
+      "name": "Sugar Loaf",
+      "address": "Urca",
+      "description": "Rio de Janeiro's best-known landmark is the rock peak of Sugarloaf, towering 394 meters above the harbor",
+      "price": 75,
+      "website": "https://bondinho.com.br",
+      "phone": "55-21-2222-3333",
+      "mainImage" : "sugarloaf1",
+      "image1": "sugarloaf1",
+      "image2": "sugarloaf2"
+    },
+    {
+      "id": 2,
+      "name": "Christ the Redeemer",
+      "address": "Laranjeiras",
+      "description": "The giant statue of Christ overlooking the city from the 709-meter summit of Corcovado",
+      "price": 80,
+      "website": "https://www.tremdocorcovado.rio",
+      "phone": "55-21-2558-1329",
+      "mainImage" : "christ1",
+      "image1": "christ1",
+      "image2": "christ2"
+    }
+]

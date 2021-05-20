@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "F8309E04-435A-491D-AFE2-CCAC0A800204"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "833BBD80-E09B-48F8-8E02-AB0E083023C7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../Applications/Xcode 2.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIResponder.h"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "87C27A70-7A3E-4E14-953B-5293F249F4A9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TourismApp/view/AttractionsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "tableView(_:numberOfRowsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E3E03927-AAD3-44C0-8DC0-18D459E7AB03"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TourismApp/view/AtrractionViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "AtrractionViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "E3E03927-AAD3-44C0-8DC0-18D459E7AB03 - 93abd01b3b916825"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TourismApp.AtrractionViewController.attractionsTableView.getter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "TourismApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leticialima/Documents/WanjaSwift/TourismApp/TourismApp/view/AtrractionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "E3E03927-AAD3-44C0-8DC0-18D459E7AB03 - 4e3cb0b5f6ae0019"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TourismApp.AtrractionViewController.attractionsTableView.setter : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "TourismApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leticialima/Documents/WanjaSwift/TourismApp/TourismApp/view/AtrractionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "E3E03927-AAD3-44C0-8DC0-18D459E7AB03 - 72c49d7c25068e2e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TourismApp.AtrractionViewController.attractionsTableView.modify : Swift.Optional&lt;__C.UITableView&gt;"
+                  moduleName = "TourismApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leticialima/Documents/WanjaSwift/TourismApp/TourismApp/view/AtrractionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "67">
+               </Location>
+               <Location
+                  uuid = "E3E03927-AAD3-44C0-8DC0-18D459E7AB03 - 82b50c80636af3da"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TourismApp.AtrractionViewController.attractionsTableView.modify : Swift.Optional&lt;__C.UITableView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "TourismApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leticialima/Documents/WanjaSwift/TourismApp/TourismApp/view/AtrractionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "E3E03927-AAD3-44C0-8DC0-18D459E7AB03 - a9594f93a8c3a9ce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TourismApp.AtrractionViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TourismApp.AtrractionViewController"
+                  moduleName = "TourismApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leticialima/Documents/WanjaSwift/TourismApp/TourismApp/view/AtrractionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "196">
+               </Location>
+               <Location
+                  uuid = "E3E03927-AAD3-44C0-8DC0-18D459E7AB03 - 79c8c6ada23d2431"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TourismApp.AtrractionViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TourismApp.AtrractionViewController&gt;"
+                  moduleName = "TourismApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/leticialima/Documents/WanjaSwift/TourismApp/TourismApp/view/AtrractionViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "152">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE9D0468-8854-48F0-B149-B95B498F25C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TourismApp/model/User.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
