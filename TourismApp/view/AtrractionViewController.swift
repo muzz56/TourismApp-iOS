@@ -24,6 +24,8 @@ class AtrractionViewController: UIViewController, UITableViewDelegate, UITableVi
     var indexPathForCell: IndexPath?
     var rowSelected: Int = 0
         
+        //*****  TEST:  thanos@gmail.com
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,9 +34,7 @@ class AtrractionViewController: UIViewController, UITableViewDelegate, UITableVi
         attractionsTableView.rowHeight = 170
         
         loadAttractionsJSON()
-        if !retrieveWishlist() {
-            createPreferences()
-        }
+        retrieveWishlist()
     }
     
     func loadAttractionsJSON() {
@@ -53,47 +53,38 @@ class AtrractionViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    func retrieveWishlist() -> Bool {
+    func retrieveWishlist() {
       let fileName: String = user! + "_prefs.json"
-           
-      do {
-            let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-            let finalPath = paths[0]
-            let filename = finalPath.appendingPathComponent(fileName)
-            let contents = try String(contentsOf: filename, encoding: .utf8)
-            // decode the contents
-            let jsonData = contents.data(using: .utf8)!
-            // Store contents of json in ARRAY
-            userPreferences = try! JSONDecoder().decode([Preferences].self, from: jsonData)
-            return true
-        } catch {
-            return false
+
+      if let filepath = Bundle.main.path(forResource: fileName, ofType: "json") {
+            print(filepath)
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                let jsonData = contents.data(using: .utf8)!
+                userPreferences = try! JSONDecoder().decode([Preferences].self, from: jsonData)
+                print("retrieveWish \(userPreferences)")
+            }
+            catch {
+                print("Cannot load file")
+            }
+        }
+        else {
+            createPreferences()
         }
     }
     
     func createPreferences() {
         let fileName: String = user! + "_prefs.json"
         userPreferences.append(Preferences(attraction: 0, wishList: false, rating: 0.0))
-        userPreferences.append(Preferences(attraction: 1, wishList: false, rating: 0.0))
+        userPreferences.append(Preferences(attraction: 1, wishList: true, rating: 0.0))
         userPreferences.append(Preferences(attraction: 2, wishList: false, rating: 0.0))
-        
         do {
+            let fileURL = try FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                .appendingPathComponent(fileName)
+
             let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            let jsonData = try encoder.encode(userPreferences)
-            
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-                let finalPath = paths[0]
-                let filename = finalPath.appendingPathComponent(fileName)
-                try jsonString.write(to: filename, atomically:true, encoding: String.Encoding.utf8)
-            }
-            else {
-                print("Error when converting data to a string")
-            }
-        }
-        catch {
-            print("Error converting or saving to JSON")
+            try encoder.encode(userPreferences).write(to: fileURL)
+        } catch {
             print(error.localizedDescription)
         }
     }
@@ -119,7 +110,7 @@ class AtrractionViewController: UIViewController, UITableViewDelegate, UITableVi
         cell?.mainImage.image = UIImage(named: listAttractions[indexPath.row].mainImage)
         cell?.nameLabel.text = listAttractions[indexPath.row].name
         cell?.addressLabel.text = listAttractions[indexPath.row].address
-        cell?.wishList.isOn = userPreferences[indexPath.row].wishList
+        //cell?.wishList.isOn = userPreferences[indexPath.row].wishList
         return cell!
     }
 
@@ -134,33 +125,12 @@ class AtrractionViewController: UIViewController, UITableViewDelegate, UITableVi
         show(attr, sender: self)
     }
 
-    func wishAttractionPressed(at indexPath: IndexPath, wish: UISwitch ) {
-        userPreferences[indexPath.row].wishList = wish.isOn
-        updatePreferences()
+    func wishAttractionPressed(at indexPath: IndexPath) {
+        print("\(listAttractions[indexPath.row].name) \(indexPath.row) ")
+        // update results here
+        userPreferences[indexPath.row].wishList = true
     }
     
-    func updatePreferences() {
-        let fileName: String = user! + "_prefs.json"
-        do {
-            let encoder = JSONEncoder()
-            encoder.outputFormatting = .prettyPrinted
-            let jsonData = try encoder.encode(userPreferences)
-            
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-                let finalPath = paths[0]
-                let filename = finalPath.appendingPathComponent(fileName)
-                try jsonString.write(to: filename, atomically:true, encoding: String.Encoding.utf8)
-            }
-            else {
-                print("Error when converting data to a string")
-            }
-        }
-        catch {
-            print("Error converting or saving to JSON")
-            print(error.localizedDescription)
-        }
-    }
     @IBAction func logoutPressed(_ sender: UIButton) {
         guard let login = storyboard?.instantiateViewController(identifier: "login") as? LoginViewController else {
                 print("Cannot find Login!")

@@ -53,48 +53,42 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
          retrieveRating()
  
          ratingYourAttraction.text =  "Rating  - \(attractionDetail!.name)"
-         attractionRating.rating = userPreferences[attractionDetail!.id].rating
         
         // update rating
         attractionRating.didFinishTouchingCosmos = { rating in
-            self.userPreferences[self.attractionDetail!.id].rating = rating
+            print("saveUserRating() \(self.attractionDetail!.id) \(rating)" )
+
+            //self.userPreferences[self.attractionDetail!.id].rating = rating
             let fileName: String = self.user! + "_prefs.json"
             do {
-                let encoder = JSONEncoder()
-                encoder.outputFormatting = .prettyPrinted
-                let jsonData = try encoder.encode(self.userPreferences)
-                
-                if let jsonString = String(data: jsonData, encoding: .utf8) {
-                    let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-                    let finalPath = paths[0]
-                    let filename = finalPath.appendingPathComponent(fileName)
-                    try jsonString.write(to: filename, atomically:true, encoding: String.Encoding.utf8)
+                let fileURL = try FileManager.default
+                    .url(for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+                    .appendingPathComponent(fileName)
+                try JSONEncoder().encode(self.userPreferences)
+                    .write(to: fileURL)
+                } catch {
+                     print(error)
                 }
-                else {
-                    print("Error when converting data to a string")
-                }
-            }
-            catch {
-                print("Error converting or saving to JSON")
-                print(error.localizedDescription)
-            }
         }
      } // end viewDidLoad()
     
     func  retrieveRating() {
-         let fileName: String = user! + "_prefs.json"
-         do {
-               let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-               let finalPath = paths[0]
-               let filename = finalPath.appendingPathComponent(fileName)
-               let contents = try String(contentsOf: filename, encoding: .utf8)
-               // decode the contents
-               let jsonData = contents.data(using: .utf8)!
-               // Store contents of json in ARRAY
-               userPreferences = try! JSONDecoder().decode([Preferences].self, from: jsonData)
-           } catch {
-               print("Cannot find")
-           }
+      let fileName: String = user! + "_prefs.json"
+
+      if let filepath = Bundle.main.path(forResource: fileName, ofType: "json") {
+            print(filepath)
+            do {
+                let contents = try String(contentsOfFile: filepath)
+                let jsonData = contents.data(using: .utf8)!
+                userPreferences = try! JSONDecoder().decode([Preferences].self, from: jsonData)
+            }
+            catch {
+                print("Cannot load file")
+            }
+        }
+        else {
+           print("Cannot find")
+        }
     }
 
     // PHONE
@@ -105,6 +99,13 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
             UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
+        
+//       if let phoneCallURL = URL(string: "tel:\(attractionDetail!.phone)") {
+//          let application:UIApplication = UIApplication.shared
+//          if (application.canOpenURL(phoneCallURL)) {
+//              application.open(phoneCallURL, options: [:], completionHandler: nil)
+//          }
+//        }
         
     } // end  phoneCall
 

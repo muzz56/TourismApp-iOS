@@ -36,7 +36,7 @@ class AttractionTableViewCell: UITableViewCell {
     
     
     @IBAction func attractionWishPressed(_ sender: UISwitch) {
-        self.delegate?.wishAttractionPressed(at: indexPath, wish: wishList)
+        self.delegate?.wishAttractionPressed(at: indexPath)
     }
     
 } // end TableViewCell
@@ -44,7 +44,7 @@ class AttractionTableViewCell: UITableViewCell {
 //  *** PROTOCOL
 protocol AttractionCellDelegate {
     
-    func wishAttractionPressed(at indexPath: IndexPath, wish: UISwitch )
+    func wishAttractionPressed(at indexPath: IndexPath)
     
 } // end Protocol
 

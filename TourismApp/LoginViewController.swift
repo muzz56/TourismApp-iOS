@@ -59,6 +59,7 @@ class LoginViewController: UIViewController {
         for user in users {
             if user.email == unwrappedEmail && user.password == unwrappedPassword {
                 userAtu = String(unwrappedEmail.components(separatedBy: "@").first!)
+                print("checkUSer - userAtu \(userAtu)")
                 defaults.set(userAtu, forKey: "user")
                 return true
             }
